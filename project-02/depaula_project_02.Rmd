@@ -1,0 +1,120 @@
+---
+title: "Mini-Project 02"
+output: 
+  html_document:
+    keep_md: true
+    toc: true
+    toc_float: true
+---
+
+# Data Visualization Project 02
+> Now we will use R to get and manipulate the csv file in order to perform data visualization. We will start loading the tidyverse package, storing the csv in a variable and create a color palette that  will be used in the next steps.
+
+```{r}
+library(tidyverse)
+library(plotly)
+library(maps)
+library(GGally)
+```
+```{r}
+cb_palette <- c("#88CCEE", "#CC6677", "#DDCC77", "#117733", "#332288", "#AA4499", 
+                             "#44AA99", "#999933", "#882255", "#661100", "#6699CC", "#888888", "#000000")
+marathon_2017 <- read.csv('../data/marathon_results_2017.csv')
+```
+
+> First, we will look on position (by each gender category) by athlete age colored by country
+
+```{r}
+
+ggplotly(marathon_2017 %>% 
+  filter(Gender < 101 & M.F == 'M') %>% 
+  ggplot(aes(x = Gender, y = Age), alpha = 1) +
+  geom_point(aes(color = Country), shape = 21) +
+  scale_color_manual(values = cb_palette) +
+  theme_classic()) %>% 
+  layout(legend = list(orientation = 'h', y = -0.3)) %>% 
+  layout(title='Age and Position on Male Marathon 2017', xaxis = list(title ='Position'))
+
+```
+```{r}
+ggplotly(marathon_2017 %>% 
+  filter(Gender < 101 & M.F == 'F') %>% 
+  ggplot(aes(x = Gender, y = Age), alpha = 1) +
+  geom_point(aes(color = Country), shape = 21) +
+  scale_color_manual(values = cb_palette) +
+  theme_classic()) %>% 
+  layout(legend = list(orientation = 'h', y = -0.3)) %>% 
+  layout(title='Age and Position on Female Marathon 2017', xaxis = list(title ='Position'))
+```
+
+> We will now compare the position by pace comparing by gender. When we run this chunk of code, we get this result:
+
+```{r}
+marathon_2017 %>% 
+  filter(Gender < 101) %>%
+  spread(M.F, Gender) %>% 
+  plot_ly() %>%
+  add_trace(
+    type = 'scatter',
+    mode = 'lines+markers',
+    x = ~M,
+    y = ~Pace,
+    text = ~Name,
+    name = "Male"
+  ) %>%
+  add_trace(
+    type = 'scatter',
+    mode = 'lines+markers',
+    x = ~F,
+    y = ~Pace,
+    text = ~Name,
+    name = "Female"
+  ) %>% 
+  layout(title='Pace comparison between male and female first 100 positions on marathon 2017', xaxis = list(title ='Position'))
+```
+
+> As we can see above males have a significant shorter pace than female athletes. Is also possible to notice that both male and female group tend to follow almost a linear trend with an exception of the top 15 female athletes that has a bigger deviation than the rest of the group getting a little closer to male athlete performance.
+	Now we’ll create a correlation plot. There is not much information to correlate except for the marks on each 5k and the official finish time but those are not feasible because of the number of different values to correlate. So instead we will select a small number of columns to correlate and we get this result:
+
+
+```{r}
+marathon_2017 %>% 
+  select(Overall, Gender, Age) %>% 
+  ggpairs()
+```
+
+> As we can see above, Overall place and Gender place is strongly correlated because each one will follow an incredibly similar pattern as we found on the male and female paces.
+	Then to finish I found a csv to be able to transform the 3 digit country name abbreviation on the marathon dataset to the country full name in order to use geom_map() to perform the spatial data visualization. I was able to perform data wrangling to tidy the data but unfortunately the marathon abbreviations don’t seem to follow the same pattern as standardized abbreviations so the data wrangling technique need some adjustments because a lot of countries don’t match and it need to change each case manually which takes a lot of trials, comparation and time.
+
+> We also faced other problem, the City also in marathon dataset don’t match with most of the list available in geom_map() method so it only recognizes a few cases.
+
+```{r}
+countries <- read.csv('../data/countries.csv')
+WorldData <- map_data('world') %>% filter(region != "Antarctica") %>% fortify
+
+spread_countries <- countries %>% 
+  spread(alpha3, name)
+spread_countries <- spread_countries[,3:ncol(spread_countries)]
+spread_countries <- gather(spread_countries) %>% 
+  group_by(key) %>% 
+  subset(!is.na(value)) %>% 
+  mutate(key = toupper(key)) %>% 
+  spread(key, value)
+spread_countries
+```
+```{r}
+ggplot() +
+    geom_map(data = WorldData, map = WorldData,
+                  aes(x = long, y = lat, group = group, map_id=region),
+                  fill = "white", colour = "#7f7f7f", size=0.5)  + 
+    geom_map(data = marathon_2017, map=WorldData,
+                  aes(fill=Gender, map_id=City),
+                  colour="#7f7f7f", size=0.5) +
+    coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) + 
+    theme_bw() +
+    ggtitle("Athletes by country") +
+    labs(fill = "Number of athletes", x = '', y = '')
+```
+
+> If the data wrangling technique succeeded I was going to count the number of athletes for each country and display the proportion of athletes by country.
+

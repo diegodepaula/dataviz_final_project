@@ -1,8 +1,8 @@
 # Data Visualization and Reproducible Research
 
-> Firstname Lastname. 
+> Diego de Paula. 
 
-Learn more about me in my [GitHub profile page](https://github.com/reiminer)
+Learn more about me in my [GitHub profile page](https://github.com/diegodepaula)
 
 
 The following is a sample of products created during the _"Data Visualization and Reproducible Research"_ course in Fall 2020.
@@ -10,36 +10,36 @@ The following is a sample of products created during the _"Data Visualization an
 
 ## Project 01
 
-In the `project_01/` folder you can find... _[short description of your revised project goes here]_
+> In the `project_01/` folder you can find an analysis on the Male FIFA World Cup matches and winners, there are some brief information on data wrangling and plot methodologies used and here is the plot with the 8 countries that won the tournment
 
 **Sample data visualization:** 
 
 _[include your favorite visualization from this project here]_
-<img src="https://github.com/reisanar/figs/raw/master/echarts.png" width="70%" height="70%">
+<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-01/depaula_project_01_files/figure-html/unnamed-chunk-7-1.png?raw=true" width="70%" height="70%">
 
 
 
 
 ## Project 02
 
-In this project, I explored ... _[short description of your revised project goes here]_ Find the code and report in the `project_02/` folder.
+> In this project, I explored the Boston Marathon 2017 data on Male and Female athletes and performed analysis on each gender and pace comparison between male and female athletes
 
 **Sample data visualization:** 
 
 _[include your favorite visualization from this project here]_
-<img src="https://github.com/reisanar/dataviz_final_project/blob/main/figures/fl_higher_ed.png" width="60%" height="60%">
+<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-02/depaula_project_02_files/figure-html/pace.png?raw=true" width="60%" height="60%">
 
 (you can also place your figures in the `figures/` folder and use the `![](path_to_picture)` option to add the pictures here)
 
 
 ## Project 03
 
-In this project, I explored ... _[short description of your revised project goes here]_
+In this project, I explored the distribution of minimum and maximum temperatures in the city of Tampa, based on weather station at the TPA facility.
 
 **Sample data visualization:** 
 
 _[include your favorite visualization from this project here]_
-<img src="https://github.com/reisanar/figs/raw/master/jackie_jessie_marion.png" width="80%" height="80%">
+<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-03/depaula_project_03_files/figure-html/unnamed-chunk-14-1.png?raw=true" width="80%" height="80%">
 
 
 ### Moving Forward
