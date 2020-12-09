@@ -30,7 +30,7 @@ sample_n(weather_tpa, 4)
 See https://www.reisanar.com/slides/relationships-models#10 for a reminder on how to use this dataset with the `lubridate` package for dates and times.
 
 
-(a) Recreate the plot below:
+# (a) Recreate the plot below:
 
 ```{r, echo = FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_facet.png")
@@ -129,7 +129,6 @@ Hint: default options for `geom_density()` were used.
 weather_tpa %>% 
   ggplot(mapping = aes(x = min_temp, 
                   y = month_name, fill = month_name)) + 
-    geom_density_ridges() +
     stat_density_ridges(quantile_lines = TRUE, quantiles = 0.5) + 
     scale_fill_viridis_d() +
     theme_minimal() +
