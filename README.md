@@ -15,7 +15,7 @@ The following is a sample of products created during the _"Data Visualization an
 **Sample data visualization:** 
 
 
-<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-01/depaula_project_01_files/figure-html/unnamed-chunk-7-1.png?raw=true" width="70%" height="70%">
+<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-01/depaula_project_01_files/figure-html/unnamed-chunk-7-1.png?raw=true" width="100%">
 
 
 
@@ -27,7 +27,7 @@ The following is a sample of products created during the _"Data Visualization an
 **Sample data visualization:** 
 
 
-<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-02/depaula_project_02_files/figure-html/pace.png?raw=true" width="60%" height="60%">
+<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-02/depaula_project_02_files/figure-html/pace.png?raw=true" width="100%">
 
 (you can also place your figures in the `figures/` folder and use the `![](path_to_picture)` option to add the pictures here)
 
@@ -39,7 +39,7 @@ The following is a sample of products created during the _"Data Visualization an
 **Sample data visualization:** 
 
 
-<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-03/depaula_project_03_files/figure-html/unnamed-chunk-14-1.png?raw=true" width="80%" height="80%">
+<img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-03/depaula_project_03_files/figure-html/unnamed-chunk-14-1.png?raw=true" width="100%">
 
 
 ### Moving Forward
