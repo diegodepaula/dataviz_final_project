@@ -14,7 +14,7 @@ The following is a sample of products created during the _"Data Visualization an
 
 **Sample data visualization:** 
 
-_[include your favorite visualization from this project here]_
+
 <img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-01/depaula_project_01_files/figure-html/unnamed-chunk-7-1.png?raw=true" width="70%" height="70%">
 
 
@@ -26,7 +26,7 @@ _[include your favorite visualization from this project here]_
 
 **Sample data visualization:** 
 
-_[include your favorite visualization from this project here]_
+
 <img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-02/depaula_project_02_files/figure-html/pace.png?raw=true" width="60%" height="60%">
 
 (you can also place your figures in the `figures/` folder and use the `![](path_to_picture)` option to add the pictures here)
@@ -34,14 +34,14 @@ _[include your favorite visualization from this project here]_
 
 ## Project 03
 
-In this project, I explored the distribution of minimum and maximum temperatures in the city of Tampa, based on weather station at the TPA facility.
+> In this project, I explored the distribution of minimum and maximum temperatures in the city of Tampa, based on weather station at the TPA facility.
 
 **Sample data visualization:** 
 
-_[include your favorite visualization from this project here]_
+
 <img src="https://github.com/diegodepaula/dataviz_final_project/blob/main/project-03/depaula_project_03_files/figure-html/unnamed-chunk-14-1.png?raw=true" width="80%" height="80%">
 
 
 ### Moving Forward
 
-_add here a short reflection on what you learned and what you plan to continue exploring in terms of data visualization, data storytelling, reproducible research, and/or related topics_
+> I’ve learnt a lot along this course about many different topics regarding Data Visualization and it segments. The modules that I’ve most enjoyed were Data Storytelling, usage of different themes and Spatial Data Viz!
